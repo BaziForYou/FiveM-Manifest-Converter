@@ -1,6 +1,6 @@
 # FiveM Manifest Converter 🔁
 ### Convert the old `__resource.lua` to the new `fxmanifest.lua` with a simple command.
-## IMPORTANT!! Once the version of the resource manifests has been changed, the celurean version is installed, this requires that all NUI resources update the HTTP POST requests to HTTPS.Or you can also change the manifest version from cerulean to adamant. 
+## IMPORTANT!! Once the version of the resource manifests has been changed, the celurean version is installed, this requires that all NUI resources update the HTTP POST requests to HTTPS. Or you can also change the manifest version from cerulean to adamant. 
  
 Command | Function
 ------------ | -------------
