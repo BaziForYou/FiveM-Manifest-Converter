@@ -71,9 +71,9 @@ RegisterCommand("manifest", async function (src, args, rw) {
                             if (err) return log(err, "error");
                             else log(`Successfully created backup for ${resourceName}`, "success"), backupSuccess = true;
                         });
-						
-						await Delay(2000)
-
+                        
+                        await Delay(2000)
+                        
                         if(!backupSuccess) return log(`Conversion process of ${resourceName} stopped because the backup file could not be created`, "error");
 
                         fs.unlink(filePath, (err) => {
