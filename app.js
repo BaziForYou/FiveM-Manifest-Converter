@@ -17,7 +17,7 @@ on("onResourceStart", (resourceName) => {
     }).catch(function (err) { log("Check update failed", "error") });
 });
 
-RegisterCommand("manifest", function (src, args, rw) {
+RegisterCommand("manifest", async function (src, args, rw) {
     let arg = args[0];
     if (!src === 0) return log("This command can only be used in the console.", "error")
     if (!arg) return log("Valid arguments: 'find/delete'", "info");
@@ -71,6 +71,8 @@ RegisterCommand("manifest", function (src, args, rw) {
                             if (err) return log(err, "error");
                             else log(`Successfully created backup for ${resourceName}`, "success"), backupSuccess = true;
                         });
+						
+						await Delay(2000)
 
                         if(!backupSuccess) return log(`Conversion process of ${resourceName} stopped because the backup file could not be created`, "error");
 
@@ -115,4 +117,10 @@ function log(str, type) {
     else if(type === "error") clr = 1;
 
     console.log(`^${clr}[${type.toUpperCase()}]^0 ${str}`);
+}
+
+function Delay(ms) {
+    return new Promise((res) => {
+        setTimeout(res, ms)
+    })
 }
